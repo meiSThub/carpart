@@ -22,11 +22,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * 
  */
 @RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = { "classpath:config/global.config.xml", "classpath:config/global.dao.xml" })
 public class CarRpcClientTest {
 
-	final static String clientCode = "[B@11b6a15";
-	final static String clientKey = "SYSTEM";
-	final static String orderCode = "";
+	final static String clientCode = "[B@1743c6e";
+	final static String clientKey = "client";
+	final static String orderCode = "DT20141124104254DD10000004";
 	final static String SERVICE_URL = "http://pandaz.wicp.net/CarPart/rpc/webservice/CarRpcService";
 	static CarRpcService service = null;
 
@@ -71,7 +72,7 @@ public class CarRpcClientTest {
 	 */
 	@Test
 	public final void testQueryOrderStatus() {
-		String orderCode = "DT20141010170848DD10000002";
+		String orderCode = "DT20141124104254DD10000004";
 		String message = service.queryOrderStatus(orderCode, clientCode,
 				clientKey);
 		System.err.println(message);
@@ -161,7 +162,7 @@ public class CarRpcClientTest {
 	 */
 	@Test
 	public final void testFitOrderStatusToInPart() {
-		String orderCode = "DT20141024162405DD10000003";
+		String orderCode = "DT20141124104254DD10000004";
 		String message = service.fitOrderStatusToInPart(orderCode, clientCode,
 				clientKey);
 		System.err.println(message);
@@ -189,7 +190,7 @@ public class CarRpcClientTest {
 	 */
 	@Test
 	public final void testFitOrderStatusToPayNotOut() {
-		String orderCode = "DT20141024162405DD10000003";
+		String orderCode = "DT20141124104254DD10000004";
 		String message = service.fitOrderStatusToPayNotOut(orderCode, 0,
 				clientCode, clientKey);
 		System.err.println(message);
