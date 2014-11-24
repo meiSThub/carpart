@@ -58,7 +58,17 @@ public interface CarRpcService {
 	 *         70 -免费停放 80 -销账 90 -已记账 其他为系统错误码 格式如:ERR_1000
 	 */
 	public String queryOrderStatus(String orderCode, String clientCode, String clientKey);
+	
+	/**
+	 * 
+	 * @param orderCode
+	 * @param clientCode
+	 * @param clientKey
+	 * @return
+	 */
+	//public String confirmTopayAndout(String orderCode, String clientCode, String clientKey);
 
+	//public String queryOrderstatusTopayOut(String orderCode, String clientCode, String clientKey);
 	/**
 	 * 获取订单需要支付费用
 	 * 
